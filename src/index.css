@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #111111;
+}
+
+.main-container {
+  width: 40rem;
+  height: 30rem;  
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  & .title {
+    width: 20rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategrey;
+    border-radius: 0.5rem;
+    color: lightskyblue;
+  }
+  & .simon-says {
+    width: 22rem;
+    aspect-ratio: 1/1;
+    background-color: #1f1f1f;    
+    border-radius: 50%;
+    display: grid;
+    overflow: hidden;    
+    border: 1rem solid #1f1f1f;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+    user-select: none;
+    -webkit-user-drag: none;
+    grid-template-areas: 
+    'g r'
+    'y b';
+    &::after {
+      content: "";
+      position: absolute;
+      width: 103%;
+      height: 103%;
+      border-radius: 50%;
+      box-shadow: inset 0px 0px 20px 12px #1f1f1f;
+      pointer-events: none;
+    }
+    & .button {
+      width: 100%;
+      height: 100%;
+      filter: opacity(60%);
+      &:hover {
+        cursor: pointer;        
+      }      
+    }  
+    & .active {      
+      filter: none;
+    }  
+    & .green {
+      background-color: chartreuse;      
+    }
+    & .red {
+      background-color: crimson;
+    }
+    & .yellow {
+      background-color: gold;
+    }
+    & .blue {
+      background-color: dodgerblue;
+    }
+    & .center {
+      position: absolute;
+      width: 10rem;
+      aspect-ratio: 1/1;
+      background-color: #1f1f1f;
+      box-shadow: 0px 0px 20px 8px #1f1f1f;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      gap: 1rem;
+      text-transform: uppercase;
+      & .score {
+        width: 60%;
+        background-color: #48D904;
+        color: #13460D;
+        box-shadow: inset 0px 0px 15px 3px black;
+        border-radius: 0.5rem;
+        text-align: center;
+      }
+      & .play-input {
+        border-radius: 50%;
+        width: 2rem;
+        aspect-ratio: 1/1;
+        border: none;
+        font-size: 0.6rem;
+        background: radial-gradient(circle at 60% 40%, lightgreen 5%, forestgreen, forestgreen);        
+        color: #111111;
+        &:hover {
+          box-shadow: 0px 0px 10px 2px green;
+          filter: brightness(110%);
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}
