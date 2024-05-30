@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: darkslategrey;
+}
+
+.main-container {
+    width: 50%;
+    aspect-ratio: 5/4;    
+    background-color: ghostwhite;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    & .titulo {
+        margin: 0 0 2rem 0;
+    }
+    & .descricao {
+        margin: 1rem 0 3rem 0;
+    }
+    & .palavra {
+        width: 25rem;
+        height: 4rem;
+        background-color: #111111;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        color: white;
+        border-top-left-radius: 0.2rem;
+        border-top-right-radius: 0.2rem;
+        text-transform: uppercase;
+    }
+    & .palavra-input {
+        width: 25rem;
+        height: 3.2rem;
+        border: none;
+        font-size: 1.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 0.4rem solid #111111;
+        border-bottom-left-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+        &.right {
+            color: forestgreen;
+        }
+        &.wrong {
+            color: hotpink;
+        }
+    }
+    & .verificar-div {
+        & .verificar-input {
+            background-color: midnightblue;
+            color: white;
+            border: none;
+            width: 7rem;
+            height: 2rem;
+            border-radius: 0.3rem;
+            margin: 1rem 1rem 4rem 2.5rem;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(150%);
+                color: rgb(188, 188, 188);
+            }
+        }
+        & .reload {
+            width: 1.5rem;
+            aspect-ratio: 1/1;
+            font-size: 1rem;
+            font-weight: bolder;
+            border-radius: 50%;
+            border: none;
+            background-color: cadetblue;
+            color: white;
+            &:hover {
+                cursor: pointer;
+                filter: brightness(150%);
+                color: rgb(188, 188, 188);
+            }
+        }
+    }
+    
+    & .gerar-input {
+        background-color: seagreen;
+        color: white;
+        border: none;
+        padding: 1%;
+        border-radius: 0.2rem;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
