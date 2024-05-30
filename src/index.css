@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(119, 11, 32);
+    box-shadow: inset 2px 1px 20px 5px;
+}
+
+.main-container {
+    border-radius: 0.5rem;
+    background-color: rgb(34, 139, 34);
+    box-shadow: inset 2px 1px 20px 5px;
+    width: 55rem;
+    aspect-ratio: 6/4;
+    max-width: 90%;
+    max-height: 90%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        '.   .   .   .  .   .   .'
+        '.   .   d   d  d   .   .'
+        '.   .   .   cd .   .   .'
+        'cb1 cb1 cb1 .  cb2 cb2 cb2'
+        'b1  b1  b1  .  b2  b2  b2'
+        '.   .   .   cp .   .   .'
+        '.   .   p   p  p   .   .'
+        '.   .   i   i  i   .   .'
+        '.   .   .   .  .   .   .';
+
+    & .hand {
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, 20px);
+    }
+
+    & .dealer-container {
+        grid-area: d;
+    }
+
+    & .player-container {
+        grid-area: p;
+    }
+
+    & .bot1-container {
+        grid-area: b1;
+    }
+
+    & .bot2-container {
+        grid-area: b2;
+    }
+
+    & .counter {
+        user-select: none;
+        width: 5rem;
+        height: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.2rem;
+        background-color: rgba(0, 0, 0, 50%);
+        color: white;
+        text-align: center;
+        & :nth-child(1) {
+            font-size: 10px;
+        }
+        &.win {
+            background-color: rgba(0, 255, 0, 50%);
+        }
+        &.dealer {
+            grid-area: cd;
+        }
+
+        &.bot1 {
+            grid-area: cb1;
+        }
+
+        &.bot2 {
+            grid-area: cb2;
+        }
+
+        &.player {
+            grid-area: cp;
+        }
+    }
+
+    & .inputs-container {
+        grid-area: i;
+
+        & input {
+            width: 5rem;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: none;
+            margin: 0 1rem 0 1rem;
+            color: white;
+            background-color: darkslategrey;
+            border: white 0.2rem solid;
+            box-shadow: 2px 2px 8px 2px lightgrey;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.card {
+    width: 4.8rem;
+    aspect-ratio: 5/7;
+    position: relative;
+    background-color: white;
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    box-shadow: 1px 1px 6px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: serif;
+    user-select: none;
+    text-transform: uppercase;
+
+    &.hidden::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: darkblue;
+        border-radius: 0.2rem;
+    }
+
+    &.red {
+        color: red;
+    }
+
+    & .number {
+        font-size: 0.8rem;
+        font-family: serif;
+    }
+
+    & .symbol {
+        font-size: 0.8rem;
+        margin-top: -5px;
+    }
+
+    & .numbers {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .top-number {
+        left: 3px;
+        top: 3px;
+    }
+
+    & .bottom-number {
+        right: 3px;
+        bottom: 3px;
+        transform: rotate(180deg);
+    }
+
+    & .center-symbols {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        grid-template-columns: repeat(3, 14px);
+        grid-template-rows: repeat(7, 11px);
+    }
+
+    & .grid-10 {
+        grid-template-areas:
+            'a . b'
+            '. c .'
+            'd . e'
+            '. . .'
+            'f . g'
+            '. h .'
+            'i . j';
+    }
+
+    & .grid-9 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            'c . d'
+            '. e .'
+            'f . g'
+            '. . .'
+            'h . i';
+    }
+
+    & .grid-8 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            '. c .'
+            'd . e'
+            '. f .'
+            '. . .'
+            'g . h';
+    }
+
+    & .grid-7 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            'c . d'
+            '. . .'
+            '. e .'
+            '. . .'
+            'f . g';
+    }
+
+    & .grid-6 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            '. . .'
+            'c . d'
+            '. . .'
+            '. . .'
+            'e . f';
+    }
+
+    & .grid-5 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            '. . .'
+            '. c .'
+            '. . .'
+            '. . .'
+            'd . e';
+    }
+
+    & .grid-4 {
+        grid-template-areas:
+            'a . b'
+            '. . .'
+            '. . .'
+            '. . .'
+            '. . .'
+            '. . .'
+            'c . d';
+    }
+
+    & .grid-3 {
+        grid-template-areas:
+            '. a .'
+            '. . .'
+            '. . .'
+            '. b .'
+            '. . .'
+            '. . .'
+            '. c .';
+    }
+
+    & .grid-2 {
+        grid-template-areas:
+            '. . .'
+            '. a .'
+            '. . .'
+            '. . .'
+            '. . .'
+            '. b .'
+            '. . .';
+    }
+
+    & .grid-1 {
+        grid-template-areas:
+            '. . .'
+            '. . .'
+            '. . .'
+            '. a .'
+            '. . .'
+            '. . .'
+            '. . .';
+    }
+
+    & .center-symbols>* {
+        font-size: 1.8rem;
+    }
+
+    & .center-symbols>*:nth-child(1) {
+        grid-area: a;
+    }
+
+    & .center-symbols>*:nth-child(2) {
+        grid-area: b;
+    }
+
+    & .center-symbols>*:nth-child(3) {
+        grid-area: c;
+    }
+
+    & .center-symbols>*:nth-child(4) {
+        grid-area: d;
+    }
+
+    & .center-symbols>*:nth-child(5) {
+        grid-area: e;
+    }
+
+    & .center-symbols>*:nth-child(6) {
+        grid-area: f;
+    }
+
+    & .center-symbols>*:nth-child(7) {
+        grid-area: g;
+    }
+
+    & .center-symbols>*:nth-child(8) {
+        grid-area: h;
+    }
+
+    & .center-symbols>*:nth-child(9) {
+        grid-area: i;
+    }
+
+    & .center-symbols>*:nth-child(10) {
+        grid-area: j;
+    }
+}
