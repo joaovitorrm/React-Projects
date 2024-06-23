@@ -137,6 +137,10 @@ html, body {
       font-size: 5vh;
       background-color: hsl(50, 60%, 60%);
     }
+    &.small {
+      font-size: 4vh;
+      background-color: hsl(100, 80%, 50%);
+    }
   }
 }
 
@@ -156,7 +160,7 @@ html, body {
   gap: 10%;
   &.shown {
     display: flex;
-    animation: win-animation 0.5s ease-in-out;
+    animation: win-animation 1s ease-in-out;
   }
   & .play-again-btn {
     height: 6vh;
