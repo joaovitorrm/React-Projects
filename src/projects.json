@@ -1,0 +1,34 @@
+{
+    "projects": [
+        {
+            "name": "Anagram Guess",
+            "description": "Descubra qual a palavra original que se tornou anagrama",
+            "path": "./AnagramGuess/index.html"
+        },
+        {
+            "name": "2048",
+            "description": "Remake of 2048",
+            "path": "./2048/index.html"
+        },
+        {
+            "name": "Blackjack",
+            "description": "Cards game where you must beat the dealer to win, having a total score of 21 or less.",
+            "path": "./Blackjack/index.html"
+        },
+        {
+            "name": "Forca",
+            "description": "Jogo da Forca, onde o usuário deve adivinhar uma palavra escolhida pelo computador.",
+            "path": "./Forca/index.html"
+        },
+        {
+            "name": "Simon Says",
+            "description": "Press the buttons of the same color and repeat the sequence.",
+            "path": "./SimonSays/index.html"
+        },
+        {
+            "name": "To Do List",
+            "description": "To Do List with React",
+            "path": "./ToDoList/index.html"
+        }
+    ]
+}
