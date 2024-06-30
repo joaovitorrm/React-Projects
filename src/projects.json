@@ -29,6 +29,11 @@
             "name": "To Do List",
             "description": "To Do List with React",
             "path": "./ToDoList/index.html"
+        },
+        {
+            "name": "Bubble Sort",
+            "description": "Bubble Sort with React",
+            "path": "./BubbleSort/index.html"
         }
     ]
 }

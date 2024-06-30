@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Project from "./Project";
 import projectsJSON from "../projects.json";
 
