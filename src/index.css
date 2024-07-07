@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  gap: 1rem;
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .play-btn {
+    width: 4rem;
+    height: 1.8rem;
+    background-color: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 95%);
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    &:hover {
+      background-color: hsl(0, 0%, 40%);
+    }
+  }
+  
+  .sound-btn {
+    font-size: 1.2rem;
+    position: absolute;    
+    left: 110%;
+    background-color: hsl(0, 0%, 30%);
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background-color: hsl(0, 0%, 40%);
+    }
+    &.clicked {
+      background-color: black;
+    }
+  }
+}
+
+
+.simon-container {
+  width: 20rem;
+  aspect-ratio: 1/1;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 48%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 0.6rem;
+  padding: 0.5rem;
+  user-select: none;
+  & .center-score {    
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    width: 7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 95%);
+    z-index: 3;
+  }
+  & .simon-btn {
+    flex-basis: 45%;
+    aspect-ratio: 1/1;    
+    background-color: hsl(0, 0%, 20%);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    &:nth-child(2) {
+      border-top-left-radius: 200%;
+      border-bottom-left-radius: 8%;
+      border-top-right-radius: 8%;
+    }
+    &:nth-child(3) {
+      border-top-right-radius: 200%;
+      border-bottom-right-radius: 8%;
+      border-top-left-radius: 8%;
+    }
+    &:nth-child(4) {
+      border-bottom-left-radius: 200%;
+      border-top-left-radius: 8%;
+      border-bottom-right-radius: 8%;
+    }
+    &:nth-child(5) {
+      border-bottom-right-radius: 200%;
+      border-top-right-radius: 8%;
+      border-bottom-left-radius: 8%;
+    }
+    &.red {
+      background-color: hsl(0, 100%, 50%);
+      z-index: 1;
+      &.active {
+        animation: redAnimation .8s ease-in-out;
+        z-index: 2;
+      }
+    }
+    &.green {
+      background-color: hsl(120, 100%, 50%);
+      z-index: 1;
+      &.active {
+        animation: greenAnimation .8s ease-in-out;
+        z-index: 2;
+      }
+    }
+    &.yellow {
+      background-color: hsl(60, 100%, 50%);
+      z-index: 1;
+      &.active {
+        animation: yellowAnimation .8s ease-in-out;
+        z-index: 2;
+      }
+    }
+    &.blue {
+      background-color: hsl(220, 100%, 50%);
+      z-index: 1;
+      &.active {
+        animation: blueAnimation .8s ease-in-out;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+@keyframes redAnimation {
+  0% {
+    outline: none;
+    filter: none;
+  }
+  40% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(0, 100%, 50%));
+  }
+  90% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(0, 100%, 50%));
+  }
+  100% {
+    outline: none;
+    filter: none;
+  }
+}
+
+@keyframes greenAnimation {
+  0% {
+    outline: none;
+    filter: none;
+  }
+  40% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(120, 100%, 50%));
+  }
+  90% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(120, 100%, 50%));
+  }
+  100% {
+    outline: none;
+    filter: none;
+  }
+}
+
+@keyframes yellowAnimation {
+  0% {
+    outline: none;
+    filter: none;
+  }
+  40% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(60, 100%, 50%));
+  }
+  90% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(60, 100%, 50%));
+  }
+  100% {
+    outline: none;
+    filter: none;
+  }
+}
+
+@keyframes blueAnimation {
+  0% {
+    outline: none;
+    filter: none;
+  }
+  40% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(215, 100%, 50%));
+  }
+  90% {
+    outline: 2px solid hsl(0, 0%, 95%);
+    filter: drop-shadow(0 0 2rem hsl(215, 100%, 50%));
+  }
+  100% {
+    outline: none;
+    filter: none;
+  }
+}
