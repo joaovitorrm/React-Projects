@@ -34,6 +34,16 @@
             "name": "Bubble Sort",
             "description": "Bubble Sort with React",
             "path": "./BubbleSort/index.html"
+        },
+        {
+            "name": "Simon Says 2",
+            "description": "Press the buttons of the same color and repeat the sequence, now with SOUND!.",
+            "path": "./SimonSays2/index.html"
+        },
+        {
+            "name": "Slide Puzzle",
+            "description": "Slide Puzzle with React",
+            "path": "./SlidePuzzle/index.html"
         }
     ]
 }
