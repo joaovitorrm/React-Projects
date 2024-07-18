@@ -31,11 +31,13 @@ const App : React.FC = () => {
 
   return (
     <div id="app">
-      <Slide actualImage={actualImage} showNumbers={showNumbers} gridSize={gridSize} setIsWinner={setIsWinner} increaseMoves={increaseMoves}/>
-      <StatusBar handleHideNumbers={() => setShowNumbers(prev => !prev)} moves={moves} />
-      <ImageSelector images={images} actualImage={actualImage} setActualImage={setImage}/>
-      <SizeSelector selectedSize={gridSize} setSelectedSize={setGridSize} />
-      <Win isWinner={isWinner}/>
+      <div className="game-container">
+        <StatusBar handleHideNumbers={() => setShowNumbers(prev => !prev)} moves={moves} />
+        <Slide actualImage={actualImage} showNumbers={showNumbers} gridSize={gridSize} setIsWinner={setIsWinner} increaseMoves={increaseMoves}/>      
+        <SizeSelector selectedSize={gridSize} setSelectedSize={setGridSize} />
+        <Win isWinner={isWinner}/>
+      </div>
+      <ImageSelector images={images} actualImage={actualImage} setActualImage={setImage}/>      
     </div>
   )
 }
