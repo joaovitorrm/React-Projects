@@ -1,6 +1,7 @@
 import Title from "./components/Title";
 import Main from "./components/Main";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
     <>
       <Title handleInputChange={handleSearch} inputValue={searchTerm}/>
       <Main searchTerm={searchTerm}/>
+      <Footer />
     </>
   )
 }
