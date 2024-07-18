@@ -8,6 +8,6 @@ export default defineConfig({
   root: "./",
   build: {
     outDir: "../gh-page",
-    emptyOutDir: true,
+    emptyOutDir: false,
   }
 })
