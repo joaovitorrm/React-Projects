@@ -41,6 +41,7 @@ const Puzzle: React.FC = () => {
                 setGlassesAmount(0);
                 speed.current = 700;
                 score.current.actual = 0;
+                steps.current.maxSteps = 3;
             };
         }, 400)
     }
