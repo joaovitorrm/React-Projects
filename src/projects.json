@@ -44,6 +44,11 @@
             "name": "Slide Puzzle",
             "description": "Slide Puzzle with React",
             "path": "./SlidePuzzle/index.html"
+        },
+        {
+            "name": "Memory Glass Puzzle",
+            "description": "Keep your eye on the cup with the ball and get the higher score",
+            "path": "./MemoryGlassPuzzle/index.html"
         }
     ]
 }
